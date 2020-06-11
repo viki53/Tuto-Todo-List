@@ -37,8 +37,6 @@ export class AppElement extends CustomElement {
 
 		this.storageKey = 'todo';
 		
-		this.formNouvelleListe = this.renderRoot.querySelector('#formulaire-creation-liste');
-		
 		this.charger();
 
 		this.renderRoot.addEventListener('new-list', (event) => {
