@@ -77,9 +77,6 @@ export class NewTodoListElement extends CustomElement {
 
 	constructor() {
 		super();
-
-		this.classList.add('todolist');
-		this.classList.add('add');
 	}
 
 	connectedCallback() {

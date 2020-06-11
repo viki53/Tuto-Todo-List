@@ -116,11 +116,11 @@ export class AppElement extends CustomElement {
 	render() {
 		return `
 		${this.listes && this.listes.length ?
-			this.listes.map(liste => html`<section is="todo-list" liste="${liste}"></section>`) :
+			this.listes.map(liste => html`<section is="todo-list" class="todolist" liste="${liste}"></section>`) :
 			``
 		}
 		
-		<section is="new-todo-list"></section>`
+		<section is="new-todo-list" class="todolist"></section>`
 	}
 }
 window.customElements.define('my-app', AppElement);

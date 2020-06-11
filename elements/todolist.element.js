@@ -107,8 +107,6 @@ export class TodoListElement extends CustomElement {
 	constructor() {
 		super();
 
-		this.classList.add('todolist');
-
 		this.renderRoot.addEventListener('delete-task', (event) => {
 			const task = event.detail.task;
 
