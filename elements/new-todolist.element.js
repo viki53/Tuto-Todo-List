@@ -101,17 +101,16 @@ export class NewTodoListElement extends CustomElement {
 
 		const input = this.renderRoot.getElementById('input-ajout-liste');
 
-		const task = new TodoList(input.value);
+		const list = new TodoList(input.value);
 
 		const newListEvent = new CustomEvent('new-list', {
 			bubbles: true,
-			composed: true,
-			detail: task
+			detail: list
 		});
 
-		input.value = '';
-
 		this.dispatchEvent(newListEvent);
+
+		input.value = '';
 	}
 
 	render() {
