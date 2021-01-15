@@ -1,4 +1,4 @@
-import { CustomElement } from '../tools/custom-element.js';
+import { MyBaseElement } from '../tools/my-base-element.js';
 import { html } from '../tools/custom-html.js';
 import { STYLE_A11Y, STYLE_COMMON, STYLE_FORM } from '../tools/styles.js';
 
@@ -10,7 +10,7 @@ import { TodoTask } from '../models/todotask.js';
 /**
  * @property {TodoList} list — La liste à afficher
  */
-export class TodoListElement extends CustomElement {
+export class TodoListElement extends MyBaseElement {
 	static get observedAttributes() {
 		return ['liste'];
 	}

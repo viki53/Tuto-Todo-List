@@ -2,14 +2,14 @@
  * @readonly
  * @property {ShadowRoot} shadowRoot — The element's shadow root
  */
-export class CustomElement extends HTMLElement {
+export class MyBaseElement extends HTMLElement {
 	get styles() {
 		return '';
 	}
 
 	constructor() {
 		super();
-		this.shadowRoot = this.attachShadow({ mode: 'open' });
+		this.attachShadow({ mode: 'open' });
 		this.render();
 	}
 

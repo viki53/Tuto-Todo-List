@@ -1,4 +1,4 @@
-import { CustomElement } from '../tools/custom-element.js';
+import { MyBaseElement } from '../tools/my-base-element.js';
 import { html } from '../tools/custom-html.js';
 import { STYLE_COMMON, STYLE_FORM } from '../tools/styles.js';
 
@@ -7,7 +7,7 @@ import { TodoList } from '../models/todolist.js';
 /**
  * @event newListName — Le nom de la liste à créer
  */
-export class NewTodoListElement extends CustomElement {
+export class NewTodoListElement extends MyBaseElement {
 	get styles() {
 		return `
 			${STYLE_COMMON}

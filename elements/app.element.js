@@ -1,4 +1,4 @@
-import { CustomElement } from '../tools/custom-element.js';
+import { MyBaseElement } from '../tools/my-base-element.js';
 import { html } from '../tools/custom-html.js';
 import { STYLE_COMMON } from '../tools/styles.js';
 
@@ -7,7 +7,7 @@ import { TodoListElement } from './todolist.element.js';
 
 import { TodoList } from '../models/todolist.js';
 
-export class AppElement extends CustomElement {
+export class AppElement extends MyBaseElement {
 	get styles() {
 		return `
 			${STYLE_COMMON}
