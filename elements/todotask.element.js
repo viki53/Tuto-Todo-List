@@ -95,7 +95,7 @@ export class TodoTaskElement extends MyBaseElement {
 			this.shadowRoot.addEventListener('change', (event) => {
 				const checkbox = this.shadowRoot.querySelector('input[type="checkbox"]');
 
-				if (checkbox !== event.originalTarget) {
+				if (checkbox !== event.target) {
 					return;
 				}
 
@@ -105,7 +105,7 @@ export class TodoTaskElement extends MyBaseElement {
 			this.shadowRoot.addEventListener('click', (event) => {
 				const btn = this.shadowRoot.querySelector('.bouton-supprimer');
 
-				if (!event.originalTarget || (btn !== event.originalTarget && !btn.contains(event.originalTarget))) {
+				if (!event.target || (btn !== event.target && !btn.contains(event.target))) {
 					return;
 				}
 

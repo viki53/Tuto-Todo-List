@@ -127,7 +127,7 @@ export class TodoListElement extends MyBaseElement {
 			this.shadowRoot.addEventListener('click', (event) => {
 				const btn = this.shadowRoot.querySelector('h1 button');
 
-				if (!event.originalTarget || (btn !== event.originalTarget && !btn.contains(event.originalTarget))) {
+				if (!event.target || (btn !== event.target && !btn.contains(event.target))) {
 					return;
 				}
 
