@@ -83,13 +83,13 @@ export class NewTodoListElement extends CustomElement {
 		super.connectedCallback();
 
 		setTimeout(() => {
-			const form = this.renderRoot.getElementById('formulaire-creation-liste');
+			const form = this.shadowRoot.getElementById('formulaire-creation-liste');
 
-			this.renderRoot.addEventListener('submit', this.creerListe.bind(this));
+			this.shadowRoot.addEventListener('submit', this.creerListe.bind(this));
 
-			this.renderRoot.addEventListener('input', () => {
-				const input = this.renderRoot.querySelector('form input[type="text"]');
-				const btn = this.renderRoot.querySelector('form button[type="submit"]');
+			this.shadowRoot.addEventListener('input', () => {
+				const input = this.shadowRoot.querySelector('form input[type="text"]');
+				const btn = this.shadowRoot.querySelector('form button[type="submit"]');
 
 				btn.disabled = !(input.value && input.value.length);
 			})
@@ -99,7 +99,7 @@ export class NewTodoListElement extends CustomElement {
 	creerListe(event) {
 		event.preventDefault();
 
-		const input = this.renderRoot.getElementById('input-ajout-liste');
+		const input = this.shadowRoot.getElementById('input-ajout-liste');
 
 		const list = new TodoList(input.value);
 

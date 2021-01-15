@@ -39,13 +39,13 @@ export class AppElement extends CustomElement {
 		
 		this.charger();
 
-		this.renderRoot.addEventListener('new-list', (event) => {
+		this.shadowRoot.addEventListener('new-list', (event) => {
 			this.listes.push(event.detail);
 			this.update();
 			this.sauvegarder();
 		})
 
-		this.renderRoot.addEventListener('delete-list', (event) => {
+		this.shadowRoot.addEventListener('delete-list', (event) => {
 			for (let i in this.listes) {
 				if (this.listes[i].id !== event.detail.list.id) {
 					continue;
@@ -56,7 +56,7 @@ export class AppElement extends CustomElement {
 			}
 		})
 
-		this.renderRoot.addEventListener('new-task', (event) => {
+		this.shadowRoot.addEventListener('new-task', (event) => {
 			for (let liste of this.listes) {
 				if (liste.id !== event.detail.list.id) {
 					continue;
@@ -66,7 +66,7 @@ export class AppElement extends CustomElement {
 			}
 			this.sauvegarder();
 		});
-		this.renderRoot.addEventListener('update-task', (event) => {
+		this.shadowRoot.addEventListener('update-task', (event) => {
 			for (let liste of this.listes) {
 				if (liste.id !== event.detail.list.id) {
 					continue;
@@ -82,7 +82,7 @@ export class AppElement extends CustomElement {
 				break;
 			}
 		});
-		this.renderRoot.addEventListener('delete-task', (event) => {
+		this.shadowRoot.addEventListener('delete-task', (event) => {
 			for (let liste of this.listes) {
 				if (liste.id !== event.detail.list.id) {
 					continue;

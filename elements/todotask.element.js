@@ -92,8 +92,8 @@ export class TodoTaskElement extends CustomElement {
 		super.connectedCallback();
 
 		setTimeout(() => {
-			this.renderRoot.addEventListener('change', (event) => {
-				const checkbox = this.renderRoot.querySelector('input[type="checkbox"]');
+			this.shadowRoot.addEventListener('change', (event) => {
+				const checkbox = this.shadowRoot.querySelector('input[type="checkbox"]');
 
 				if (checkbox !== event.originalTarget) {
 					return;
@@ -102,8 +102,8 @@ export class TodoTaskElement extends CustomElement {
 				this.changerEtatTache(!!checkbox.checked);
 			});
 
-			this.renderRoot.addEventListener('click', (event) => {
-				const btn = this.renderRoot.querySelector('.bouton-supprimer');
+			this.shadowRoot.addEventListener('click', (event) => {
+				const btn = this.shadowRoot.querySelector('.bouton-supprimer');
 
 				if (!event.originalTarget || (btn !== event.originalTarget && !btn.contains(event.originalTarget))) {
 					return;
@@ -126,7 +126,7 @@ export class TodoTaskElement extends CustomElement {
 			}
 		});
 
-		this.renderRoot.dispatchEvent(updateTaskEvent);
+		this.shadowRoot.dispatchEvent(updateTaskEvent);
 
 		this.update();
 	}
@@ -141,7 +141,7 @@ export class TodoTaskElement extends CustomElement {
 			}
 		});
 		
-		this.renderRoot.dispatchEvent(deleteTaskEvent);
+		this.shadowRoot.dispatchEvent(deleteTaskEvent);
 
 		this.parentNode.removeChild(this);
 	}

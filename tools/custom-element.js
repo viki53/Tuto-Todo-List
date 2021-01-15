@@ -1,6 +1,6 @@
 /**
  * @readonly
- * @property {ShadowRoot} renderRoot — The element's shadow root
+ * @property {ShadowRoot} shadowRoot — The element's shadow root
  */
 export class CustomElement extends HTMLElement {
 	get styles() {
@@ -9,7 +9,7 @@ export class CustomElement extends HTMLElement {
 
 	constructor() {
 		super();
-		this.renderRoot = this.attachShadow({ mode: 'open' });
+		this.shadowRoot = this.attachShadow({ mode: 'open' });
 		this.render();
 	}
 
@@ -25,11 +25,11 @@ export class CustomElement extends HTMLElement {
 	updateStyle() {
 		const style = document.createElement('style');
 		style.textContent = this.styles;
-		this.renderRoot.appendChild(style);
+		this.shadowRoot.appendChild(style);
 	}
 
 	update() {
-		this.renderRoot.innerHTML = this.render();
+		this.shadowRoot.innerHTML = this.render();
 		this.updateStyle();
 	}
 

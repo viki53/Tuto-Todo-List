@@ -107,7 +107,7 @@ export class TodoListElement extends CustomElement {
 	constructor() {
 		super();
 
-		this.renderRoot.addEventListener('delete-task', (event) => {
+		this.shadowRoot.addEventListener('delete-task', (event) => {
 			const task = event.detail.task;
 
 			for (let i in this.liste.taches) {
@@ -124,8 +124,8 @@ export class TodoListElement extends CustomElement {
 		super.connectedCallback();
 
 		setTimeout(() => {
-			this.renderRoot.addEventListener('click', (event) => {
-				const btn = this.renderRoot.querySelector('h1 button');
+			this.shadowRoot.addEventListener('click', (event) => {
+				const btn = this.shadowRoot.querySelector('h1 button');
 
 				if (!event.originalTarget || (btn !== event.originalTarget && !btn.contains(event.originalTarget))) {
 					return;
@@ -134,11 +134,11 @@ export class TodoListElement extends CustomElement {
 				this.supprimerListe();
 			});
 
-			this.renderRoot.addEventListener('submit', this.creerTache.bind(this));
+			this.shadowRoot.addEventListener('submit', this.creerTache.bind(this));
 
-			this.renderRoot.addEventListener('input', () => {
-				const input = this.renderRoot.querySelector('form input[type="text"]');
-				const btn = this.renderRoot.querySelector('form button[type="submit"]');
+			this.shadowRoot.addEventListener('input', () => {
+				const input = this.shadowRoot.querySelector('form input[type="text"]');
+				const btn = this.shadowRoot.querySelector('form button[type="submit"]');
 
 				btn.disabled = !(input.value && input.value.length);
 			})
@@ -158,7 +158,7 @@ export class TodoListElement extends CustomElement {
 			}
 		});
 
-		this.renderRoot.dispatchEvent(deleteListEvent);
+		this.shadowRoot.dispatchEvent(deleteListEvent);
 
 		this.parentNode.removeChild(this);
 	}
@@ -166,7 +166,7 @@ export class TodoListElement extends CustomElement {
 	creerTache(event) {
 		event.preventDefault();
 
-		const input = this.renderRoot.querySelector('.formulaire-ajout-tache input[type="text"]');
+		const input = this.shadowRoot.querySelector('.formulaire-ajout-tache input[type="text"]');
 		const name = input.value;
 
 		this.nouvelleTache = new TodoTask(name);
