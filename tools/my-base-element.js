@@ -22,7 +22,7 @@ export class MyBaseElement extends HTMLElement {
 		this.update();
 	}
 
-	updateStyle() {
+	updateStyles() {
 		const style = document.createElement('style');
 		style.textContent = this.styles;
 		this.shadowRoot.appendChild(style);
@@ -30,7 +30,7 @@ export class MyBaseElement extends HTMLElement {
 
 	update() {
 		this.shadowRoot.innerHTML = this.render();
-		this.updateStyle();
+		this.updateStyles();
 	}
 
 	setProperty(prop, value) {
