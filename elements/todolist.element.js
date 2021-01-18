@@ -221,11 +221,11 @@ export class TodoListElement extends MyBaseElement {
 			</div>`}
 
 			<form class="formulaire-ajout-tache">
-				<label for="input-ajout-tache" class="sronly">Rédigez une nouvelle tâche à faire</label>
+				<label for="input-ajout-tache" class="sr-only">Rédigez une nouvelle tâche à faire</label>
 				<input type="text" id="input-ajout-tache" aria-invalid="true" aria-label="Rédigez une nouvelle tâche à faire" placeholder="Ex. : Rédiger un tutoriel">
 				<button type="submit" disabled>Ajouter</button>
 
-				${this.nouvelleTache ? html`<div role="status" aria-live="polite" class="sronly">${this.nouvelleTache.nom} a été ajouté</div>` : ''}
+				${this.nouvelleTache ? html`<div role="status" aria-live="polite" class="sr-only">${this.nouvelleTache.nom} a été ajouté</div>` : ''}
 			</form>` :
 			``
 		}

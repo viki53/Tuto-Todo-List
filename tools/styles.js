@@ -9,7 +9,7 @@ export const STYLE_COMMON = `
 export const STYLE_A11Y = `
 [tabindex="-1"] { outline: none }
 
-.sronly {
+.sr-only {
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);
 	padding: 0 !important;
