@@ -120,7 +120,7 @@ export class NewTodoListElement extends MyBaseElement {
 		</h1>
 
 		<form id="formulaire-creation-liste">
-			<input type="text" id="input-ajout-liste" aria-invalid="true" aria-label="Créez une nouvelle liste de tâches à faire" placeholder="Ex. : Liste de courses">
+			<input type="text" id="input-ajout-liste" aria-invalid="true" aria-label="Titre de la nouvelle liste" placeholder="Ex. : Liste de courses">
 			<button type="submit" disabled>Créer</button>
 		</form>`;
 	}
